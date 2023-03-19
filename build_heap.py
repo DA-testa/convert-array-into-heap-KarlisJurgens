@@ -35,14 +35,14 @@ def main():
         assert 1<=n<=100000,"n out of bounds"
         data = list(map(int, input().split()))
         assert len(data) == n
-    if v == "F":
+    if "F" in v:
         file_name=input()
         with open(file_name, 'r') as file:
             content = file.read()
             data=list(map(int,content.split()))
     swaps = build_heap(data)
     print(len(swaps))
-    if v== "I":
+    if "I" in v:
         for i, j in swaps:
             print(i, j)
 
