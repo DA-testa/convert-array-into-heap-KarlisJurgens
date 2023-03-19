@@ -30,7 +30,7 @@ def build_heap(data):
 
 def main():  
     v = input()
-    if v == "I":
+    if "I" in v:
         n = int(input()) 
         assert 1<=n<=100000,"n out of bounds"
         data = list(map(int, input().split()))
