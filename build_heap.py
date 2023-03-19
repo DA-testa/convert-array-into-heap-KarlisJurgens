@@ -29,19 +29,22 @@ def build_heap(data):
     return swaps
 
 def main():  
-    # TODO : add input and corresponding checks
-    # add another input for I or F 
-    # first two tests are from keyboard, third test is from a file
-    
-    # input from keyboard
-    n = int(input()) 
-    assert 1<=n<=100000,"n out of bounds"
-    data = list(map(int, input().split()))
-    assert len(data) == n
+    v = input()
+    if v == "I":
+        n = int(input()) 
+        assert 1<=n<=100000,"n out of bounds"
+        data = list(map(int, input().split()))
+        assert len(data) == n
+    if v == "F":
+        file_name=input()
+        with open(file_name, 'r') as file:
+            content = file.read()
+            data=list(map(int,content.split()))
     swaps = build_heap(data)
     print(len(swaps))
-    for i, j in swaps:
-        print(i, j)
+    if v== "I":
+        for i, j in swaps:
+            print(i, j)
 
 
 if __name__ == "__main__":
